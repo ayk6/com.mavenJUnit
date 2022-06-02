@@ -1,28 +1,30 @@
-package day05;
+package day06;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import java.time.Duration;
 
-public class C04BeforeAfter {
+public class C01beforeAfterClass {
 
-    WebDriver driver;
+    static WebDriver driver;
+    // beforeClass ve afterClass, before-after'dan farklı olarak
+    // sadece static methodlarda çalışır
+    // before after, her methoddan önce ve sonra çalışır
+    // beforeClass afterClass ise en başta ve en sonda bir kez çalışır
 
-    @Before
-    public void setUp(){
+    @BeforeClass
+    public static void setUp(){
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    @After
-    public void tearDown(){
+    @AfterClass
+    public static void tearDown(){
         driver.close();
     }
 
