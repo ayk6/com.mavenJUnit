@@ -15,17 +15,17 @@ public class C02checkBoxTest {
     WebDriver driver;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    //@After
-    //public void tearDown(){
-      //  driver.close();
-    //}
+    @After
+    public void tearDown() {
+        driver.close();
+    }
 
     @Test
     public void test1() {
@@ -35,10 +35,10 @@ public class C02checkBoxTest {
         WebElement cb1 = driver.findElement(By.xpath("//input[@type='checkbox'][1]"));
         WebElement cb2 = driver.findElement(By.xpath("//input[@type='checkbox'][2]"));
         // checkbox1 ve 2 seçili değilse onay kutusuna tıkla
-        if (!cb1.isSelected()){
+        if (!cb1.isSelected()) {
             cb1.click();
         }
-        if (!cb2.isSelected()){
+        if (!cb2.isSelected()) {
             cb2.click();
         }
     }
