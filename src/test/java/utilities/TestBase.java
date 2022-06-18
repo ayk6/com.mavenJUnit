@@ -16,7 +16,7 @@ public abstract class TestBase {
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
     }
     @After
     public void tearDown(){
