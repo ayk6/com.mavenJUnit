@@ -17,8 +17,5 @@ public class C02explicitlyWait extends TestBase {
         // click button nd wait until textBox is enabled
         driver.findElement(By.xpath("//button[@onclick='swapInput()']")).click();
 
-
-
-
     }
 }
